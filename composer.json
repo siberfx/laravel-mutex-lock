@@ -1,0 +1,53 @@
+{
+    "name": "siberfx/laravel-mutex-lock",
+    "description": "Laravel integration for php-lock/lock: database-backed mutexes for MySQL/MariaDB, PostgreSQL and SQLite.",
+    "keywords": ["laravel", "mutex", "lock", "php-lock", "mysql", "postgresql", "sqlite", "advisory-lock", "concurrency"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Selim Görmüş",
+            "email": "info@siberfx.com"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "ext-pdo": "*",
+        "illuminate/contracts": "^12.0 || ^13.0",
+        "illuminate/database": "^12.0 || ^13.0",
+        "illuminate/support": "^12.0 || ^13.0",
+        "malkusch/lock": "^3.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0 || ^11.0",
+        "phpunit/phpunit": "^11.5 || ^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Siberfx\\MutexLock\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Siberfx\\MutexLock\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Siberfx\\MutexLock\\MutexLockServiceProvider"
+            ],
+            "aliases": {
+                "Mutex": "Siberfx\\MutexLock\\Facades\\Mutex"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

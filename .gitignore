@@ -1,0 +1,8 @@
+.idea/
+vendor
+.cursor
+.claude
+composer.lock
+.phpunit.cache
+.phpunit.result.cache
+phpunit.xml
